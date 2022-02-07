@@ -15,6 +15,7 @@ for i in range(10000000):
     p.stepSimulation()
     time.sleep(1 / 60)
     print(i)
+    #At least it work
 
 p.disconnect()
 
