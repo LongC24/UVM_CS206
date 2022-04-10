@@ -48,27 +48,21 @@ class Robot():
             if self.nn.Is_Motor_Neuron(neuronName):
                 jointName = self.nn.Get_Motor_Neurons_Joint(neuronName)
                 desiredAngle = self.nn.Get_Value_Of(neuronName)
-                self.motors[jointName].SetValue(desiredAngle)
+                self.motors[jointName].SetValue(desiredAngle * c.motor_joint_range)
 
     def get_fitness(self):
-        # basePositionAndOrientation = p.getBasePositionAndOrientation(self.robot)
-        # print(basePositionAndOrientation)
-        # basePosition = basePositionAndOrientation[0]
-        # xPos = basePosition[1]
-        # print(xPos)
-        #stateOfFirstLink = p.getBasePositionAndOrientation(self.objects[0])
-        stateOfFirstLink = p.getLinkState(self.robotId, 0)
-        #stateOfFirstLink = p.getBasePositionAndOrientation(self.robot, 0)
-        position = stateOfFirstLink[0]
-
-        print(position)
-        xPosition = position[0]
-        yPosition = position[1]
-        height = position[2]
+        basePositionAndOrientation = p.getBasePositionAndOrientation(self.robotId)
+        basePosition = basePositionAndOrientation[0]
+        xPos, yPos, zPos = basePosition
         with open(f"tmp{self.solution_id}.txt", "w") as f:
-            f.write(str(height))
+            f.write(str(xPos))
 
         f.close()
+        f1 = open("xyztest.txt", "a")  # 设置文件对象
+
+        f1.write(str(xPos) + ":" + str(yPos) + ":" + str(zPos) + "\n")  # 将字符串写入文件中
+        f1.close()
+
         if platform.system() == "Windows":
             os.rename("tmp" + str(self.solution_id) + ".txt", "fitness" + str(self.solution_id) + ".txt")
         else:

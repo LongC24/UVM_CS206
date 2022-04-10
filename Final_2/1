@@ -10,8 +10,7 @@ MotionThreadFunc thread started
 b3Printf: b3Warning[examples/Importers/ImportURDFDemo/BulletUrdfImporter.cpp,126]:
 
 b3Printf: expected a world element, continuing without it.
-Running simulation with id: 37
-(-1.5763866677223388, 2.3976735056721257, 0.37108294130849956)
+Running simulation with id: 1
 numActiveThreads = 0
 stopping threads
 Thread with taskId 0 exiting
@@ -20,3 +19,13 @@ destroy semaphore
 semaphore destroyed
 destroy main semaphore
 main semaphore destroyed
+
+ error in pybullet: Not connected to physics server.
+Traceback (most recent call last):
+  File "/Users/YLC/ComputerScience/UVM_CS206/Final_2/simulate.py", line 16, in <module>
+    sim.get_fitness()
+  File "/Users/YLC/ComputerScience/UVM_CS206/Final_2/simulation.py", line 67, in get_fitness
+    self.robot.get_fitness()
+  File "/Users/YLC/ComputerScience/UVM_CS206/Final_2/robot.py", line 54, in get_fitness
+    basePositionAndOrientation = p.getBasePositionAndOrientation(self.robotId)
+pybullet.error: Not connected to physics server.
