@@ -60,12 +60,12 @@ class ParallelHillClimber():
         print()
 
     def print_fitnesses(self):
+        print()
         print("Generation:", self.gen)
         for key in self.parents.keys():
-            print(f"parent {key} fitness:", self.parents[key].fitness, end="\t\t|\t")
+            print(f"parent {key} fitness:", self.parents[key].fitness, end=" & ")
             print(f"child {key} fitness:", self.children[key].fitness)
-        print(f"Best in gen {self.gen}: {self.get_best()} ({self.parents[self.get_best()].fitness})")
-        print()
+        print("Generation: " + str(self.gen) + " END")
 
     def spawn(self):
         self.children = {}
