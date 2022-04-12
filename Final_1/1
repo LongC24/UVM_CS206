@@ -10,8 +10,8 @@ MotionThreadFunc thread started
 b3Printf: b3Warning[examples/Importers/ImportURDFDemo/BulletUrdfImporter.cpp,126]:
 
 b3Printf: expected a world element, continuing without it.
-Running simulation with id: 37
-(-1.5763866677223388, 2.3976735056721257, 0.37108294130849956)
+Running simulation with id: 104
+(4.520347125074963, 4.56646266746462, 2.20540616161757)
 numActiveThreads = 0
 stopping threads
 Thread with taskId 0 exiting

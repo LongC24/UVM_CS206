@@ -7,7 +7,7 @@ motor_max_force = 20.
 motor_joint_range = 0.5
 
 num_gens = 10
-pop_size = 10
+pop_size = 15
 
 num_motor_neurons = 10
 num_sensor_neurons = 6

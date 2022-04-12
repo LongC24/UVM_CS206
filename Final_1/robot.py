@@ -56,9 +56,9 @@ class Robot():
         # basePosition = basePositionAndOrientation[0]
         # xPos = basePosition[1]
         # print(xPos)
-        #stateOfFirstLink = p.getBasePositionAndOrientation(self.objects[0])
+        # stateOfFirstLink = p.getBasePositionAndOrientation(self.objects[0])
         stateOfFirstLink = p.getLinkState(self.robotId, 0)
-        #stateOfFirstLink = p.getBasePositionAndOrientation(self.robot, 0)
+        # stateOfFirstLink = p.getBasePositionAndOrientation(self.robot, 0)
         position = stateOfFirstLink[0]
 
         print(position)
@@ -66,7 +66,7 @@ class Robot():
         yPosition = position[1]
         height = position[2]
         with open(f"tmp{self.solution_id}.txt", "w") as f:
-            f.write(str(height))
+            f.write(str(-1 * height))
 
         f.close()
         if platform.system() == "Windows":
